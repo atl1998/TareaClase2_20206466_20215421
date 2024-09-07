@@ -21,6 +21,7 @@
                     <th>Departamento</th>
                     <th>Ciudad</th>
                     <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -35,6 +36,13 @@
                         <a class="btn btn-outline-info" th:href="@{info/{id}(id=${employee.employee_id})}" data-toggle="tooltip" data-placement="bottom" title="Ver Detalles">
                             <span class="oi oi-pencil"></span>
                         </a>
+                    </td>
+                    <td>
+                        <form th:action="@{/employee/delete/{id}(id=${employee.employee_id})}" method="post" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este empleado?');">
+                            <button type="submit" class="btn btn-outline-danger" data-toggle="tooltip" data-placement="bottom" title="Borrar">
+                                <span class="oi oi-trash"></span>
+                            </button>
+                        </form>
                     </td>
 
 

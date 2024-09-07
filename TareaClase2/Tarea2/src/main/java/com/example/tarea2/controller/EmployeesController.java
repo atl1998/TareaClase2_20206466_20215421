@@ -5,9 +5,8 @@ import com.example.tarea2.repository.EmployeesRepository;
 import com.example.tarea2.entity.Employees;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/employee")
@@ -34,5 +33,16 @@ public class EmployeesController {
                 .orElseThrow(() -> new IllegalArgumentException("Empleado no encontrado"));
         model.addAttribute("employee", employee);
         return "info"; // Página de detalles del empleado
+    }
+
+    // Método para eliminar un empleado
+    @PostMapping("/delete/{id}")
+    public String deleteEmpleado(@PathVariable("id") Integer id, RedirectAttributes redirectAttributes) {
+        Employees employee = employeesRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Empleado no encontrado"));
+
+        employeesRepository.delete(employee);
+        redirectAttributes.addFlashAttribute("message", "Empleado eliminado exitosamente.");
+        return "redirect:/employee/list"; // Redirige a la lista de empleados después de eliminar
     }
 }
