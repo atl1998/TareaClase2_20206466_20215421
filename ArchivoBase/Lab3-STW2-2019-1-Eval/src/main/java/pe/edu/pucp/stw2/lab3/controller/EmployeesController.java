@@ -11,9 +11,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import pe.edu.pucp.stw2.lab3.model.bean.Employee;
 import pe.edu.pucp.stw2.lab3.model.bean.Job;
 import pe.edu.pucp.stw2.lab3.model.repository.EmployeeDAO;
+import pe.edu.pucp.stw2.lab3.model.repository.EmployeeRepository;
 import pe.edu.pucp.stw2.lab3.model.repository.JobDAO;
 
 /**
@@ -26,18 +28,20 @@ import pe.edu.pucp.stw2.lab3.model.repository.JobDAO;
 @RequestMapping("/employee")
 public class EmployeesController {
 
+    final EmployeeRepository  employeeRepository;
+    public EmployeesController(EmployeeRepository employeeRepository){
+        this.employeeRepository= employeeRepository;
+    }
 
 
+    /*
     private EmployeeDAO employeesDAO = new EmployeeDAO();
     private JobDAO  jobsDAO = new JobDAO();
-
+*/
 
     @GetMapping({"employee/list", "employee"})
-    public String listarEmpleados() {
-//      List<Employee> lista = employeesDAO.findAll();
-        for(){
-            System.out.print();
-        }
+    public String listarEmpleados(Model model, @RequestParam(required=false) String zona) {
+//      model.addAtribute("listaEmpleados", employee.findAll());
         return "XXXXXX";
     }
 

@@ -40,7 +40,7 @@ public class EmployeeDAO extends BaseDAO {
 
         return employee;
     }
-
+/*
     public boolean deleteById(int id) {
         String sql = " //        COMPLETAR";
         boolean flag = false;
@@ -48,10 +48,10 @@ public class EmployeeDAO extends BaseDAO {
              //        COMPLETAR
             flag = true;
 
-        } catch (SQLException ex) {
+        }catch (SQLException ex) {
             Logger.getLogger(EmployeeDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return flag;
     }
-
+*/
 }
