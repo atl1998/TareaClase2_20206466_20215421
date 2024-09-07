@@ -28,6 +28,8 @@
                     <td th:text="${stat.count}"></td>
                     <td th:text="${employee.first_name + ' ' + employee.last_name}"></td>
                     <td th:text="${employee.email}"></td>
+                    <td th:text="${employee.department.departmentName}"></td>
+                    <td th:text="${employee.department.location.city}"></td>
                     <td></td>
                     <td></td>
                 </tr>

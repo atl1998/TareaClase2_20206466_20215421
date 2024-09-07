@@ -23,6 +23,12 @@ public class Employees {
 
     @Column(name="email", nullable=false)
     private String email;
+
+    // Relación con la tabla Department
+    @ManyToOne
+    @JoinColumn(name="department_id", nullable=false)
+    private Department department;
+
 }
 /*package com.example.tarea2.entity;
 
