@@ -19,7 +19,7 @@ public class Location {
     @Column(name="city", nullable=false)
     private String city;
 
-    // Relación inversa con departments
+    // Relación con departments
     @OneToMany(mappedBy = "location", cascade = CascadeType.ALL)
     private List<Department> departments;
 }

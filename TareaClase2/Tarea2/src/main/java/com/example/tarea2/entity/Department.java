@@ -1,4 +1,4 @@
-Department:package com.example.tarea2.entity;
+package com.example.tarea2.entity;
 
 import jakarta.persistence.*;
 import java.util.List;

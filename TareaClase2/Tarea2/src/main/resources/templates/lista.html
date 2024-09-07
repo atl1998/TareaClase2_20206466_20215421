@@ -20,6 +20,7 @@
                     <th>Correo</th>
                     <th>Departamento</th>
                     <th>Ciudad</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -30,8 +31,13 @@
                     <td th:text="${employee.email}"></td>
                     <td th:text="${employee.department.departmentName}"></td>
                     <td th:text="${employee.department.location.city}"></td>
-                    <td></td>
-                    <td></td>
+                    <td>
+                        <a class="btn btn-outline-info" th:href="@{info/{id}(id=${employee.employee_id})}" data-toggle="tooltip" data-placement="bottom" title="Ver Detalles">
+                            <span class="oi oi-pencil"></span>
+                        </a>
+                    </td>
+
+
                 </tr>
             </tbody>
         </table>

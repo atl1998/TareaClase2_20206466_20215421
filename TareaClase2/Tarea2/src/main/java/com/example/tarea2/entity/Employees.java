@@ -24,34 +24,15 @@ public class Employees {
     @Column(name="email", nullable=false)
     private String email;
 
-    // Relación con la tabla Department
+    //relación con la tabla departments
     @ManyToOne
     @JoinColumn(name="department_id", nullable=false)
     private Department department;
 
+    //relación con la tabla jobs
+    @ManyToOne
+    @JoinColumn(name="job_id", nullable=false)
+    private Job job;
+
 }
-/*package com.example.tarea2.entity;
 
-import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter
-@Setter
-@Entity
-@Table(name="employees")
-public class Employees {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="employee_id",nullable=false)
-    private Integer employeeid;
-
-    @Column(name="first_name",nullable=false)
-    private String nombre;
-
-    @Column(name="last_name",nullable=false)
-    private String apellido;
-
-    @Column(name="email",nullable=false)
-    private String correo;
-}*/
