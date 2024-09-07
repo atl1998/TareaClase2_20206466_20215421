@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import pe.edu.pucp.stw2.lab3.model.bean.Employee;
 import pe.edu.pucp.stw2.lab3.model.bean.Job;
 import pe.edu.pucp.stw2.lab3.model.repository.EmployeeDAO;
@@ -21,15 +22,22 @@ import pe.edu.pucp.stw2.lab3.model.repository.JobDAO;
  */
 
 // Añadir la anotación para  el Controlador : @ ...
-
+@Controller
+@RequestMapping("/employee")
 public class EmployeesController {
+
+
 
     private EmployeeDAO employeesDAO = new EmployeeDAO();
     private JobDAO  jobsDAO = new JobDAO();
 
+
     @GetMapping({"employee/list", "employee"})
     public String listarEmpleados() {
-//        COMPLETAR
+//      List<Employee> lista = employeesDAO.findAll();
+        for(){
+            System.out.print();
+        }
         return "XXXXXX";
     }
 
